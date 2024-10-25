@@ -1,0 +1,10 @@
+data:
+  split: 0.8
+  batch_size: 32
+  num_class: 37
+
+model:
+  path: google/vit-base-patch16-224
+  lr: 0.001
+  momentum: 0.9
+  epoch: 50
