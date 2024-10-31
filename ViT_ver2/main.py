@@ -9,7 +9,8 @@ def main():
     config = dict_to_namespace(config)
 
     run = ViTRunner(config)
-    dataset = OxfordIIIPetDataset(config.dataset.oxfordiiipet_folder_path, config.dataset.model_path, pretrained=config.runner_model.use_pretrained)
+    dataset = OxfordIIIPetDataset(config.dataset.oxfordiiipet_folder_path, config.dataset.model_path, pretrained=config.runner_model.use_pretrained,
+                                  download=config.dataset.download)
     run.init_data(dataset)
     run.train()
     run.test()
