@@ -1,0 +1,23 @@
+dataset:
+  model_path : google/vit-base-patch16-224
+  oxfordiiipet_folder_path : 'C:/Users/Lenovo/OneDrive - Hanoi University of Science and Technology/Desktop/DL/CV/ViT/'
+
+ViT:
+  channels : 3
+  img_size : 144
+  patch_size : 4
+  emb_dim : 32
+  n_layers : 2
+  dropout : 0.0
+  heads : 1
+  out_dim : 37
+
+runner_model:
+  pretrained_model_path : google/vit-base-patch16-224
+  use_pretrained : True
+  chechpoint_path: None
+  
+  log_interval: None
+  epochs : 2
+  lr : 1e-4
+  
