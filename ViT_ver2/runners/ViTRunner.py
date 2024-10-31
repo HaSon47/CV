@@ -132,7 +132,7 @@ class ViTRunner:
                 total += labels.size(0)
         test_loss /= len(self.test_loader)
         test_acc = 100.*correct/total
-        print(f'Validation Loss: {test_loss:.4f}, Validation Accuracy: {test_acc:.2f}%')
+        print(f'Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.2f}%')
         return test_loss, test_acc
     
     def predict(self, image):
