@@ -4,17 +4,17 @@ from torchvision.datasets import OxfordIIITPet
 from torchvision.transforms import Resize, ToTensor, Compose
 
 class OxfordIIIPetDataset(Dataset):  
-    def __init__(self, image_root, model_path=None, pretrained=False, img_size=144):
+    def __init__(self, image_root, model_path=None, pretrained=False, download=False, img_size=144):
         self.pretrained = pretrained
         if pretrained:
             self.img_process = ViTImageProcessor.from_pretrained(model_path)
-            self.dataset = OxfordIIITPet(root=image_root, download=False)
+            self.dataset = OxfordIIITPet(root=image_root, download=download)
         else:
             self.transform = Compose([
                 Resize((img_size, img_size)),
                 ToTensor()
             ])
-            self.dataset = OxfordIIITPet(root=image_root, download=False, transform= self.transform )
+            self.dataset = OxfordIIITPet(root=image_root, download=download, transform= self.transform )
     def __len__(self):
         return len(self.dataset)
     def __getitem__(self, id):
